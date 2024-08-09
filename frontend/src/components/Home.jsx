@@ -9,7 +9,7 @@ const Home = () => {
   useGetAllPost();
   useGetSuggestedUsers();
   return (
-    <div className="flex bg-gradient-to-r from-slate-100 to-gray-100">
+    <div className="flex bg-gradient-to-r from-slate-100 to-gray-100 ml-44">
       <div className="flex-grow">
         <Feed />
         <Outlet />

@@ -1,12 +1,4 @@
-import {
-  Heart,
-  Home,
-  LogOut,
-  MessageCircle,
-  PlusSquare,
-  Search,
-  TrendingUp,
-} from "lucide-react";
+import { Heart, Home, LogOut, MessageCircle, PlusSquare } from "lucide-react";
 import React, { useState } from "react";
 import logo from "../assets/logo.png";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
@@ -31,9 +23,12 @@ const LeftSidebar = () => {
 
   const logoutHandler = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/v1/user/logout", {
-        withCredentials: true,
-      });
+      const res = await axios.get(
+        "https://codtech-task2.onrender.com/api/v1/user/logout",
+        {
+          withCredentials: true,
+        }
+      );
       if (res.data.success) {
         dispatch(setAuthUser(null));
         dispatch(setSelectedPost(null));
@@ -78,7 +73,7 @@ const LeftSidebar = () => {
   ];
 
   return (
-    <div className="fixed top-0 z-10 left-0 border-r border-gray-300 w-full sm:w-1/4 md:w-1/5 lg:w-[16%] h-screen bg-gradient-to-r from-slate-100 to-indigo-100">
+    <div className="fixed top-0 z-10 left-0 border-r border-gray-300 w-full sm:w-1/4 md:w-1/5 lg:w-[16%] h-screen bg-gradient-to-r from-slate-100 to-indigo-100 bg-transparent">
       <div className="flex flex-col">
         <h1 className="my-8 pl-3 font-bold text-xl">
           <Link to="/" className=" font-serif">
